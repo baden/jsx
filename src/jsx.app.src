@@ -2,6 +2,7 @@
 [
     {description, "a streaming, evented json parsing toolkit"},
     {vsn, "2.1.1"},
+    {id, "git"},
     {modules, [
         jsx,
         jsx_encoder,
