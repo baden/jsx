@@ -1,0 +1,18 @@
+#!/usr/bin/env escript
+
+-mode(compile).
+
+main([]) ->
+    % io:format("Hello, world!!!", []).
+    case os:getenv("JSX_NOMAPS") of
+      false ->
+        try map_support() of
+          true -> io:format("-Dmaps_support", []);
+          _ -> <<"">>
+        catch _:_ -> <<"">>
+        end;
+      _ -> <<"">>
+    end.
+
+map_support() ->
+    maps:keys(#{0 => false, 1 => true}) == [0,1].
